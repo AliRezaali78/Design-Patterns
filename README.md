@@ -1,3 +1,4 @@
 # Design Patterns
 
-* Memento Pattern
+* Behavioural
+  * Memento Pattern
