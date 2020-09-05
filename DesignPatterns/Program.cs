@@ -1,4 +1,4 @@
-﻿using DesignPatterns.Momento;
+﻿using DesignPatterns.Memento;
 using System;
 
 namespace DesignPatterns
@@ -7,10 +7,10 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            MomentoSection();
+            MementoSection();
         }
 
-        private static void MomentoSection()
+        private static void MementoSection()
         {
             var editor = new Editor();
             var history = new History();

@@ -1,5 +1,6 @@
-﻿namespace DesignPatterns.Momento
+﻿namespace DesignPatterns.Memento
 {
+    // Memento
     public class EditorState
     {
         public string Content { get;}

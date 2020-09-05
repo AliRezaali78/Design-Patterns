@@ -1,5 +1,5 @@
 ﻿
-namespace DesignPatterns.Momento
+namespace DesignPatterns.Memento
 {
     // Originator
     public class Editor

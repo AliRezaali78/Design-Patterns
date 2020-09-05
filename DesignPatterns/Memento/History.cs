@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DesignPatterns.Momento
+namespace DesignPatterns.Memento
 {
     // Caretaker
     class History
