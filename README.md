@@ -2,3 +2,4 @@
 
 * Behavioural
   * Memento Pattern
+  * State Pattern
