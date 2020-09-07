@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Memento;
+using DesignPatterns.State;
 using System;
 
 namespace DesignPatterns
@@ -7,7 +8,17 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
-            MementoSection();
+
+        }
+
+        private static void StatePatternSection()
+        {
+            var canvas = new Canvas();
+            canvas.SelectedTool = new SelectionTool();
+            canvas.MouseUp();
+
+            canvas.SelectedTool = new BrushTool();
+            canvas.MouseUp();
         }
 
         private static void MementoSection()
