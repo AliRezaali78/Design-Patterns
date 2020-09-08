@@ -3,20 +3,20 @@
     public class BoldCommand : IUndoableCommand
     {
         private readonly Document _document;
-        private readonly HistoryCommand _historyCommands;
+        private readonly CommandHistory _commandHistory;
         private string _previousContent;
 
-        public BoldCommand(Document document, HistoryCommand historyCommands)
+        public BoldCommand(Document document, CommandHistory commandHistory)
         {
             _document = document;
-            _historyCommands = historyCommands;
+            _commandHistory = commandHistory;
         }
 
         public void Execute()
         {
             _previousContent = _document.Content;
             _document.MakeBold();
-            _historyCommands.Push(this);
+            _commandHistory.Push(this);
         }
 
 

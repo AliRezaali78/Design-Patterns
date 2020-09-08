@@ -2,7 +2,7 @@
 
 namespace DesignPatterns.Command.UndoableCommand
 {
-    public class HistoryCommand
+    public class CommandHistory
     {
         private readonly Stack<IUndoableCommand> _commands = new Stack<IUndoableCommand>();
 

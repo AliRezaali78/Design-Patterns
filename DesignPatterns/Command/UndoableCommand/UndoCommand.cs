@@ -2,17 +2,17 @@
 {
     public class UndoCommand : ICommand
     {
-        private readonly HistoryCommand _history;
+        private readonly CommandHistory _commandHistory;
 
-        public UndoCommand(HistoryCommand history)
+        public UndoCommand(CommandHistory commandHistory)
         {
-            _history = history;
+            _commandHistory = commandHistory;
         }
 
         public void Execute()
         {
-            if (_history.Size > 0)
-                _history.Pop().UnExecute();
+            if (_commandHistory.Size > 0)
+                _commandHistory.Pop().UnExecute();
         }
     }
 }

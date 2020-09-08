@@ -22,7 +22,7 @@ namespace DesignPatterns
             Console.WriteLine("Before");
             Console.WriteLine(document.Content);
 
-            var history = new HistoryCommand();
+            var history = new CommandHistory();
             var boldCommand = new BoldCommand(document, history);
             var button = new Button(boldCommand);
             button.Click();
