@@ -1,6 +1,7 @@
 ﻿using DesignPatterns.Memento;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
+using DesignPatterns.Template_Method_Pattern;
 using System;
 
 namespace DesignPatterns
@@ -10,6 +11,12 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+        }
+
+        private static void TemplateMethodPatternSection()
+        {
+            var task = new TransferTask();
+            task.Execute();
         }
 
         private static void StrategySection()
