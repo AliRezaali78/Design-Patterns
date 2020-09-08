@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Memento;
 using DesignPatterns.State;
+using DesignPatterns.Strategy;
 using System;
 
 namespace DesignPatterns
@@ -9,6 +10,12 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+        }
+
+        private static void StrategySection()
+        {
+            var storage = new ImageStorage(new PngCompressor(), new BestFilterInTheWorld());
+            storage.SavePhoto("asas");
         }
 
         private static void StatePatternSection()
