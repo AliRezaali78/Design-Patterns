@@ -1,4 +1,7 @@
-﻿using DesignPatterns.Memento;
+﻿using DesignPatterns.Command;
+using DesignPatterns.Command.Composite;
+using DesignPatterns.Command.UndoableCommand;
+using DesignPatterns.Memento;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
 using DesignPatterns.Template_Method_Pattern;
@@ -10,7 +13,47 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+        }
 
+        private static void UndoableCommandPattern()
+        {
+            var document = new Document { Content = "Some content" };
+
+            Console.WriteLine("Before");
+            Console.WriteLine(document.Content);
+
+            var history = new HistoryCommand();
+            var boldCommand = new BoldCommand(document, history);
+            var button = new Button(boldCommand);
+            button.Click();
+
+            Console.WriteLine("After");
+            Console.WriteLine(document.Content);
+
+
+            Console.WriteLine("After Undo");
+            var undoCommand = new UndoCommand(history);
+            undoCommand.Execute();
+
+            Console.WriteLine(document.Content);
+        }
+
+        private static void CommandPatternSection()
+        {
+            var customerManager = new CustomerManager();
+            var button = new Button(new AddCustomerCommand(customerManager));
+            button.Click();
+        }
+
+        private static void CompositeCommandPatternSection()
+        {
+            var compositeCommand = new CompositeCommand();
+            compositeCommand.Commands.Add(new AddFilterCommand());
+            compositeCommand.Commands.Add(new RemoveBlurCommand());
+            // compositeCommand.Execute();
+
+            var button = new Button(compositeCommand);
+            button.Click();
         }
 
         private static void TemplateMethodPatternSection()
