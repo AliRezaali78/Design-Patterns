@@ -5,3 +5,4 @@
   * State Pattern
   * Strategy Pattern
   * Template Method Pattern
+  * Command Pattern
