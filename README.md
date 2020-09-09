@@ -6,3 +6,4 @@
   * Strategy Pattern
   * Template Method Pattern
   * Command Pattern
+  * Observer Pattern
