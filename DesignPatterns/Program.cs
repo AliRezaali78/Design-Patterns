@@ -2,6 +2,7 @@
 using DesignPatterns.Command.Composite;
 using DesignPatterns.Command.UndoableCommand;
 using DesignPatterns.Memento;
+using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
 using DesignPatterns.Template_Method_Pattern;
@@ -14,6 +15,17 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+        }
+
+        private static void ObserverPatternSection()
+        {
+            var dataSource = new DataSource();
+
+            var chart = new Chart(dataSource);
+            var sheet = new SpreadSheet(dataSource);
+
+            dataSource.Value = 1;
+            dataSource.Value = 2;
         }
 
         private static void UndoableCommandPattern()
