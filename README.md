@@ -7,3 +7,4 @@
   * Template Method Pattern
   * Command Pattern
   * Observer Pattern
+  * Mediator Pattern
