@@ -1,12 +1,14 @@
 ﻿using DesignPatterns.Command;
 using DesignPatterns.Command.Composite;
 using DesignPatterns.Command.UndoableCommand;
+using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
 using DesignPatterns.Template_Method_Pattern;
 using System;
+using Button = DesignPatterns.Command.Button;
 
 namespace DesignPatterns
 {
@@ -15,6 +17,13 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+        }
+
+        private static void MediatorPattern()
+        {
+            var window = new ArticleWindow();
+            window.ListBox.Selected = "ABCD";
+            window.ListBox.Selected = " ";
         }
 
         private static void ObserverPatternSection()
