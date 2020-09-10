@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Command;
+﻿using DesignPatterns.ChainOfResponsibilty;
+using DesignPatterns.Command;
 using DesignPatterns.Command.Composite;
 using DesignPatterns.Command.UndoableCommand;
 using DesignPatterns.Mediator;
@@ -16,7 +17,14 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+        }
 
+        private static void ChainOfResponsibilitySection()
+        {
+            var logger = new Logger(null);
+            var compressor = new Compressor(logger);
+            var authenticator = new Authenticator(compressor);
+            authenticator.Handle(new HttpRequest());
         }
 
         private static void MediatorPattern()
