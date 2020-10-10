@@ -1,4 +1,6 @@
-﻿using DesignPatterns.ChainOfResponsibilty;
+﻿using DesignPatterns.Adapter;
+using DesignPatterns.Adapter.ThirdPartyLibraries;
+using DesignPatterns.ChainOfResponsibilty;
 using DesignPatterns.Command;
 using DesignPatterns.Command.Composite;
 using DesignPatterns.Command.UndoableCommand;
@@ -18,6 +20,15 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+
+        }
+
+        private static void AdapterSection()
+        {
+            var image = new Image();
+            var imageViewer = new ImageViewer(image);
+            imageViewer.ApplyFilter(new AwesomeFilter());
+            imageViewer.ApplyFilter(new BlackAndWhiteFilter(new BlackAndWhite()));
         }
 
         private static void CompositeSection()
