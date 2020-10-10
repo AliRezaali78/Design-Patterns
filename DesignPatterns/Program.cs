@@ -2,6 +2,7 @@
 using DesignPatterns.Command;
 using DesignPatterns.Command.Composite;
 using DesignPatterns.Command.UndoableCommand;
+using DesignPatterns.Composite;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
@@ -17,6 +18,24 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+        }
+
+        private static void CompositeSection()
+        {
+            var group1 = new Group();
+            group1.Components.Add(new Shape());
+            group1.Components.Add(new Shape());
+
+            var group2 = new Group();
+            group2.Components.Add(new Shape());
+            group2.Components.Add(new Shape());
+
+            var group = new Group();
+            @group.Components.Add(group1);
+            @group.Components.Add(group2);
+
+            @group.Render();
+            @group.Resize();
         }
 
         private static void ChainOfResponsibilitySection()
