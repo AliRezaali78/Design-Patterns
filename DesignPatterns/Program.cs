@@ -5,6 +5,7 @@ using DesignPatterns.Command;
 using DesignPatterns.Command.Composite;
 using DesignPatterns.Command.UndoableCommand;
 using DesignPatterns.Composite;
+using DesignPatterns.Composite.Example;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
