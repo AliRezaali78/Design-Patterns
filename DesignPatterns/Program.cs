@@ -11,6 +11,7 @@ using DesignPatterns.Observer;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
 using DesignPatterns.Template_Method_Pattern;
+using DesignPatterns.Visitor;
 using System;
 using Button = DesignPatterns.Command.Button;
 
@@ -47,6 +48,18 @@ namespace DesignPatterns
 
             @group.Render();
             @group.Resize();
+        }
+
+        private static void VisitorSection()
+        {
+            var htmlDocument = new HtmlDocument();
+            htmlDocument.AddNode(new AnchorNode());
+            htmlDocument.AddNode(new HeadingNode());
+            htmlDocument.Execute(new HighlightOperation());
+            htmlDocument.Execute(new BoldOperation());
+
+            var anchor = new AnchorNode();
+            anchor.Execute(new HighlightOperation());
         }
 
         private static void ChainOfResponsibilitySection()
