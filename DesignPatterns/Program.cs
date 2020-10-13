@@ -5,6 +5,7 @@ using DesignPatterns.Command;
 using DesignPatterns.Command.Composite;
 using DesignPatterns.Command.UndoableCommand;
 using DesignPatterns.Composite;
+using DesignPatterns.Decorator;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
@@ -22,6 +23,12 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+        }
+
+        private static void DecoratorSection()
+        {
+            var stream = new CompressedStream(new EncryptedStream(new CloudStream()));
+            stream.Write("1234-1234-1234-1234");
         }
 
         private static void AdapterSection()
