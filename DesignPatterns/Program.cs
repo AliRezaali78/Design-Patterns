@@ -6,6 +6,7 @@ using DesignPatterns.Command.Composite;
 using DesignPatterns.Command.UndoableCommand;
 using DesignPatterns.Composite;
 using DesignPatterns.Decorator;
+using DesignPatterns.Facade;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
@@ -23,6 +24,12 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+        }
+
+        private static void FacadeSection()
+        {
+            var notificationService = new NotificationService();
+            notificationService.Send("Hello Facade Pattern", "Facade");
         }
 
         private static void DecoratorSection()
