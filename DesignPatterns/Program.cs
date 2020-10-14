@@ -7,6 +7,7 @@ using DesignPatterns.Command.UndoableCommand;
 using DesignPatterns.Composite;
 using DesignPatterns.Decorator;
 using DesignPatterns.Facade;
+using DesignPatterns.Flyweight;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
@@ -23,6 +24,24 @@ namespace DesignPatterns
     {
         static void Main(string[] args)
         {
+
+        }
+
+        private static void FlyWeightSection()
+        {
+            var pointService = new PointService(new PointFactory());
+            foreach (var point in pointService.GetPoints())
+                point.Draw();
+
+
+            // Example 2
+            // var sheet = new ExcelSheet(new FontFactory());
+            // sheet.SetFontFamily(0, 0, "Hello");
+            // sheet.SetIsBold(0,0,true);
+            // sheet.SetIsBold(1,0, true);
+            // sheet.SetIsBold(1,1, true);
+            // sheet.SetFontFamily(1,1,"Hello");
+            // sheet.Render();
 
         }
 
