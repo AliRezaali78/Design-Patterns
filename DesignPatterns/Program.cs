@@ -1,5 +1,6 @@
 ﻿using DesignPatterns.Adapter;
 using DesignPatterns.Adapter.ThirdPartyLibraries;
+using DesignPatterns.Bridge;
 using DesignPatterns.ChainOfResponsibilty;
 using DesignPatterns.Command;
 using DesignPatterns.Command.Composite;
@@ -25,6 +26,16 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+        }
+
+        private static void BridgeSection()
+        {
+            var remoteController = new RemoteController(new SamsungTV());
+            remoteController.TurnOn();
+
+            var advancedRemoteController = new AdvancedRemoteController(new SamsungTV());
+            advancedRemoteController.TurnOn();
+            advancedRemoteController.SetChanel(1);
         }
 
         private static void FlyWeightSection()
