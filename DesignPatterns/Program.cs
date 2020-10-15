@@ -12,6 +12,7 @@ using DesignPatterns.Flyweight;
 using DesignPatterns.Mediator;
 using DesignPatterns.Memento;
 using DesignPatterns.Observer;
+using DesignPatterns.Proxy;
 using DesignPatterns.State;
 using DesignPatterns.Strategy;
 using DesignPatterns.Template_Method_Pattern;
@@ -26,6 +27,19 @@ namespace DesignPatterns
         static void Main(string[] args)
         {
 
+        }
+
+        private static void ProxySection()
+        {
+            var library = new Library();
+            var books = new[] { "a", "b", "c" };
+
+            foreach (var book in books)
+                library.AddEbook(new LoggingEbookProxy(book));
+
+            library.OpenBook("a");
+            library.OpenBook("b");
+            library.OpenBook("b");
         }
 
         private static void BridgeSection()
